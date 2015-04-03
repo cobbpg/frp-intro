@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="27cm" height="10cm" viewBox="58 100 531 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <ellipse style="fill: #000000" cx="120" cy="140" rx="10" ry="10"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2.35099e-37; stroke: #000000" cx="120" cy="140" rx="10" ry="10"/>
+  </g>
+  <g>
+    <ellipse style="fill: #000000" cx="120" cy="260" rx="10" ry="10"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2.35099e-37; stroke: #000000" cx="120" cy="260" rx="10" ry="10"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="180" y="180" width="100" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="180" y="180" width="100" height="40"/>
+  </g>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="230" y="200">
+    <tspan x="230" y="200"></tspan>
+  </text>
+  <text font-size="16.9331" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="230" y="205.875">
+    <tspan x="230" y="205.875">snapshot</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="360" y="180" width="100" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="360" y="180" width="100" height="40"/>
+  </g>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="410" y="200">
+    <tspan x="410" y="200"></tspan>
+  </text>
+  <text font-size="16.9331" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="410" y="205.875">
+    <tspan x="410" y="205.875">hold</tspan>
+  </text>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="130,140 230,140 230,170.264 "/>
+    <polygon style="fill: #000000" points="230,177.764 225,167.764 230,170.264 235,167.764 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="230,177.764 225,167.764 230,170.264 235,167.764 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 6; stroke: #000000" points="130,260 230,260 230,229.736 "/>
+    <polygon style="fill: #000000" points="230,222.236 235,232.236 230,229.736 225,232.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="230,222.236 235,232.236 230,229.736 225,232.236 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 6; stroke: #000000" x1="280" y1="200" x2="350.264" y2="200"/>
+    <polygon style="fill: #000000" points="357.764,200 347.764,205 350.264,200 347.764,195 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="357.764,200 347.764,205 350.264,200 347.764,195 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="460" y1="200" x2="520.264" y2="200"/>
+    <polygon style="fill: #000000" points="527.764,200 517.764,205 520.264,200 517.764,195 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="527.764,200 517.764,205 520.264,200 517.764,195 "/>
+  </g>
+  <text font-size="16.9331" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="120" y="116">
+    <tspan x="120" y="116">mousePosition</tspan>
+  </text>
+  <text font-size="16.9331" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="120" y="295.75">
+    <tspan x="120" y="295.75">mouseClick</tspan>
+  </text>
+  <g>
+    <ellipse style="fill: #000000" cx="540" cy="200" rx="10" ry="10"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2.35099e-37; stroke: #000000" cx="540" cy="200" rx="10" ry="10"/>
+  </g>
+  <text font-size="16.9331" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="540" y="175.012">
+    <tspan x="540" y="175.012">ballPosition</tspan>
+  </text>
+</svg>

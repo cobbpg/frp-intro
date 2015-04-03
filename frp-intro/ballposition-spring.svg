@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="32cm" height="9cm" viewBox="8 78 630 163" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <ellipse style="fill: #000000" cx="70" cy="220" rx="10" ry="10"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2.35099e-37; stroke: #000000" cx="70" cy="220" rx="10" ry="10"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="240" y="100" width="100" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="240" y="100" width="100" height="40"/>
+  </g>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="290" y="120">
+    <tspan x="290" y="120"></tspan>
+  </text>
+  <text font-size="16.9331" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="290" y="125.875">
+    <tspan x="290" y="125.875">integral</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="400" y="100" width="100" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="400" y="100" width="100" height="40"/>
+  </g>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="450" y="120">
+    <tspan x="450" y="120"></tspan>
+  </text>
+  <text font-size="16.9331" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="450" y="125.875">
+    <tspan x="450" y="125.875">integral</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="340" y1="120" x2="390.264" y2="120"/>
+    <polygon style="fill: #000000" points="397.764,120 387.764,125 390.264,120 387.764,115 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="397.764,120 387.764,125 390.264,120 387.764,115 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="500" y1="120" x2="570.264" y2="120"/>
+    <polygon style="fill: #000000" points="577.764,120 567.764,125 570.264,120 567.764,115 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="577.764,120 567.764,125 570.264,120 567.764,115 "/>
+  </g>
+  <text font-size="16.9331" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="70" y="196">
+    <tspan x="70" y="196">mousePosition</tspan>
+  </text>
+  <g>
+    <ellipse style="fill: #000000" cx="590" cy="120" rx="10" ry="10"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2.35099e-37; stroke: #000000" cx="590" cy="120" rx="10" ry="10"/>
+  </g>
+  <text font-size="16.9331" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="590" y="96">
+    <tspan x="590" y="96">ballPosition</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="80" y1="220" x2="140.264" y2="220"/>
+    <polygon style="fill: #000000" points="147.764,220 137.764,225 140.264,220 137.764,215 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="147.764,220 137.764,225 140.264,220 137.764,215 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="150" y="200" width="40" height="40" rx="20" ry="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="150" y="200" width="40" height="40" rx="20" ry="20"/>
+  </g>
+  <text font-size="16.9331" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="170" y="225.875">
+    <tspan x="170" y="225.875">-</tspan>
+  </text>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="540,120 540,220 199.736,220 "/>
+    <polygon style="fill: #000000" points="192.236,220 202.236,215 199.736,220 202.236,225 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="192.236,220 202.236,215 199.736,220 202.236,225 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="150" y="100" width="40" height="40" rx="20" ry="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x="150" y="100" width="40" height="40" rx="20" ry="20"/>
+  </g>
+  <text font-size="16.9331" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="170" y="125.875">
+    <tspan x="170" y="125.875">*</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke-linejoin: round; stroke: #000000" x1="170" y1="200" x2="170" y2="149.736"/>
+    <polygon style="fill: #000000" points="170,142.236 175,152.236 170,149.736 165,152.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="170,142.236 175,152.236 170,149.736 165,152.236 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="190" y1="120" x2="230.264" y2="120"/>
+    <polygon style="fill: #000000" points="237.764,120 227.764,125 230.264,120 227.764,115 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="237.764,120 227.764,125 230.264,120 227.764,115 "/>
+  </g>
+  <g>
+    <ellipse style="fill: #000000" cx="70" cy="120" rx="10" ry="10"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2.35099e-37; stroke: #000000" cx="70" cy="120" rx="10" ry="10"/>
+  </g>
+  <text font-size="16.9331" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="70" y="95.0125">
+    <tspan x="70" y="95.0125">k</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="80" y1="120" x2="140.264" y2="120"/>
+    <polygon style="fill: #000000" points="147.764,120 137.764,125 140.264,120 137.764,115 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="147.764,120 137.764,125 140.264,120 137.764,115 "/>
+  </g>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="80" y="80">
+    <tspan x="80" y="80"></tspan>
+  </text>
+</svg>

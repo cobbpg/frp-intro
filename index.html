@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Functional Reactive Programming</title>
+
+    <meta name="description" content="A purely functional GPU pipeline description language">
+    <meta name="author" content="Patai Gergely">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/sky.css" id="theme">
+
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = 'css/print/pdf.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
+
+    <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <div class="slides">
+        <section>
+          <h1>Functional<br>Reactive<br>Programming</h1>
+          <h3>A Short Primer</h3>
+          <p>Gergely Patai</p>
+        </section>
+
+        <section>
+          <section>
+            <h2>What’s in the name?</h2>
+          </section>
+
+          <section>
+            <h2>‘Functional’</h2>
+            <ul>
+              <li class="fragment">Referentially transparent building blocks, i.e. inlining or extracting definitions doesn’t change the meaning of the program</li>
+              <li class="fragment">Functions as the primary means of composition</li>
+              <li class="fragment">Ability to perform equational reasoning</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>‘Reactive’</h2>
+            <div class="prose">
+              <p class="fragment">A program that interacts with its environment at a speed dictated by the environment. (Gérard Berry, 1989)</p>
+              <p class="fragment">In other words, (soft or hard) real-time systems, e.g. embedded systems or games.</p>
+              <p class="fragment"><b>BUT:</b> Nowadays the term ‘reactive programming’ seems to be strongly associated with data-flow
+              networks or streams.</p>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>The original core idea</h2>
+            <ul>
+              <li class="fragment">Treat the whole lifetime of a time-varying quantity as a value</li>
+              <li class="fragment">Two basic abstractions and their denotations:
+                <ul>
+                  <li>⟦Behaviour〈α〉⟧ = Time → α</li>
+                  <li>⟦Event〈α〉⟧ = Stream〈(Time, α)〉</li>
+                </ul>
+              </li>
+              <li class="fragment">Examples:
+                <ul>
+                  <li><b>microphone</b> : Behaviour〈Float〉</li>
+                  <li><b>keyboard</b> : Event〈KeyCode〉</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Examples</h2>
+          </section>
+          <section>
+            <div>
+              <h3>Set position on mouse click</h3>
+              <p><b>ballPosition</b> = hold(snapshot(mousePosition, mouseClick))</p>
+              <p class="fragment"><img src="frp-intro/ballposition-hold.svg" width="75%" height="75%"/></p>
+              <p class="fragment"><b>snapshot</b> : (Behaviour〈α〉, Event〈β〉) → Event〈α〉</p>
+              <p class="fragment"><b>hold</b> : Event〈α〉 → Behaviour〈α〉</p>
+            </div>
+          </section>
+          <section>
+            <div>
+              <h3>Follow mouse on a spring</h3>
+              <p><b>ballPosition</b> =<br>integral(integral(k * (mousePosition - ballPosition)))</p>
+              <p class="fragment"><img src="frp-intro/ballposition-spring.svg" width="100%" height="100%"/></p>
+              <p class="fragment"><b>k</b> = abs(lowPass(microphone)) 😁</p>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>What do we gain?</h2>
+          </section>
+          <section>
+            <h2>Lightweight<br>encapsulation</h2>
+            <p>No need to introduce new variables when adding more stateful processing steps.</p>
+          </section>
+          <section>
+            <h2>Complex event handling</h2>
+            <p>No callback hell. The data-flow and temporal behaviour is plain to see.</p>
+          </section>
+          <section>
+            <h2>Transactionality</h2>
+            <p>Respecting referential transparency implies that we cannot observe glitches or inconsistent state.</p>
+          </section>
+          <section>
+            <h2>Explicit state changes</h2>
+            <p>No side-effects. State is only mutated by localised logic and the ordering of events is explicitly controlled.</p>
+          </section>
+          <section>
+            <h2>No hidden dependencies</h2>
+            <p>Everything that can affect the behaviour of an entity must be accounted for at the time of its declaration.</p>
+          </section>
+          <section>
+            <h2>Testability</h2>
+            <p>Thanks to everything being just a value, we can easily apply QuickCheck-style property tests to verify our logic.</p>
+          </section>
+        </section>
+
+        <section>
+          <h2>Different approaches</h2>
+          <ul>
+            <li class="fragment">What are the first-class building blocks?</li>
+            <li class="fragment">How can we combine them?</li>
+          </ul>
+        </section>
+
+        <section>
+          <section>
+            <h2>Building blocks</h2>
+            <ul>
+              <li class="fragment">Events and behaviours (reactive values, RVs) are first-class elements.</li>
+              <li class="fragment">Transformers of RVs are first-class elements, while RVs themselves are only implied.</li>
+              <li class="fragment">Both approaches can be equally expressive!</li>
+            </ul>
+          </section>
+          <section>
+            <h2>‘Value oriented’</h2>
+            <ul>
+              <li class="fragment">We have types like <b>Event〈α〉</b> and/or <b>Behaviour〈α〉</b>, which represent time-varying values.</li>
+              <li class="fragment">We combine values of these types with plain functions, like <b>snapshot</b> or <b>hold</b>.</li>
+              <li class="fragment">Preferred option for a textual language.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>‘Transformer oriented’</h2>
+            <ul>
+              <li class="fragment">We have types like <b>Trans〈α, β〉</b>, which represent transformations between time-varying quantities.</li>
+              <li class="fragment">We combine these transformations with functions like:
+                <ul>
+                  <li><b>ser</b> : (Trans〈α, β〉, Trans〈β, γ〉) → Trans〈α, γ〉</li>
+                  <li><b>par</b> : (Trans〈α, β〉, Trans〈γ, δ〉) → Trans〈(α, γ), (β, δ)〉</li>
+                </ul>
+              </li>
+              <li class="fragment">Preferred option for a visual language.</li>
+              <li class="fragment">Typically associated with <i>Arrows</i>.</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Structure</h2>
+            <ul>
+              <li class="fragment">Can be static, dynamic, or hybrid (only certain pre-defined forms of dynamism possible).</li>
+              <li class="fragment">Trade-off between the potential extent of static analysis (including the ability to optimise) and expressiveness.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Dynamism</h2>
+            <ul>
+              <li class="fragment">Support for higher-order reactive values or transformations.</li>
+              <li class="fragment"><b>switch</b> : Event〈Behaviour〈α〉〉 → Behaviour〈α〉</li>
+              <li class="fragment"><b>switcher</b> : Trans〈(Trans〈α, β〉, α), β〉</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Final takeaway</h2>
+            <ul>
+              <li class="fragment">FRP is a principled way to organise state and manage state changes.</li>
+              <li class="fragment">There’s no one true way of doing FRP; different applications require different designs.</li>
+              <li class="fragment">You can use these ideas in the small or large, or just to inform your design decisions.</li>
+              <li class="fragment">The jury is still out on whether using FRP pervasively causes too much friction to be worth it.</li>
+            </ul>
+          </section>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+      transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+      // Parallax scrolling
+      // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+      // parallaxBackgroundSize: '2100px 900px',
+
+      // Optional libraries used to extend on reveal.js
+      dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+      });
+
+    </script>
+  </body>
+</html>
